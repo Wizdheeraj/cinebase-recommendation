@@ -27,7 +27,10 @@ def fetch_poster(movie_id):
     return full_path
 
 # Streamlit UI
-st.title("Movie Recommendation System")
+st.markdown(
+    "<h1 style='text-align: center; color: #FF5733;'>🎬 Movie Recommendation System 🍿</h1>", 
+    unsafe_allow_html=True
+)
 
 selected_movie = st.selectbox("Select a movie:", movies['title'].values)
 
@@ -46,3 +49,4 @@ if st.button('Recommend'):
                 with col:
                     st.image(poster_url, width=130)
                     st.write(movie_title)
+
